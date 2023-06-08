@@ -38,3 +38,18 @@ class Issiz(Insan):
 
     def get_statu(self):
         return self.__statu
+ # tecrube dictionarysindeki değerlere bakarak statü değeri döndürecek metodu yazıyoruz
+    def statu_bul(self):
+        #dictionarydeki değerlerin etki oranı kullanılarak tecrube değişkenlerini oluşturuyoruz
+        mavi_yaka_tecrube  = self.__tecrube["mavi yaka"]*(20/100)
+        beyaz_yaka_tecrube = self.__tecrube["beyaz yaka"]*(35/100)
+        yonetici_tecrube = self.__tecrube["yonetici"]*(45/100)
+        #tecrube değerlerini karşılaştırıp en büyük değere göre statü döndürüyoruz
+        if mavi_yaka_tecrube >= beyaz_yaka_tecrube and mavi_yaka_tecrube > yonetici_tecrube:
+            return "Mavi yaka"
+
+        elif beyaz_yaka_tecrube >= mavi_yaka_tecrube and beyaz_yaka_tecrube > yonetici_tecrube:
+            return "Beyaz yaka"
+
+        elif yonetici_tecrube >= mavi_yaka_tecrube and yonetici_tecrube >= beyaz_yaka_tecrube:
+            return "Yönetici"
