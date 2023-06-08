@@ -21,8 +21,8 @@ class Issiz(Insan):
     def get_mavi_yaka_tecrube(self):
         return self.__tecrube["mavi yaka"]
 
-       def set_mavi_yaka_tecrube(self, yeni_mavi_yaka_tecrube):
-        self.__mavi_yaka = yeni_mavi_yaka_tecrube
+    def set_mavi_yaka_tecrube(self, yeni_mavi_yaka_tecrube):
+           self.__mavi_yaka = yeni_mavi_yaka_tecrube
 
     def get_beyaz_yaka_tecrube(self):
         return self.__tecrube["beyaz yaka"]

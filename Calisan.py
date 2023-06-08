@@ -67,8 +67,20 @@ class Calisan(Insan):
     def get_yeni_maas(self):
         return self.__yeni_maas
 
-    def set_yeni_maas(self, yeni_yeni_maas):
-        self.__yeni_maas = yeni_yeni_maas
+    def zam_hakki(self):
+        #tecrube ve maas değerlerini bizden istenilen şekilde karşılaştırıp yeni maaş değeri buluyoruz
+        if self.__tecrube / 12 < 2:
+            zam_orani = 0
+            self.__yeni_maas = self.__maas + self.__maas * (zam_orani / 100)
+        elif self.__tecrube / 12 >= 2 and self.__tecrube < 4 and self.__maas < 15000:
+            zam_orani = self.__maas % self.__tecrube
+            self.__yeni_maas = self.__maas + self.__maas * (zam_orani / 100)
+        elif self.__tecrube / 12 >= 4 and self.__maas < 25000:
+            zam_orani = (self.__maas % self.__tecrube) / 2
+            self.__yeni_maas = self.__maas + self.__maas * (zam_orani / 100)
+        else:
+            self.__yeni_maas = self.__maas
+
 # istenilen değerleri string halinde döndürecek str metodunu yazıyoruz
     def __str__(self):
         self.zam_hakki()
