@@ -53,3 +53,6 @@ class Issiz(Insan):
 
         elif yonetici_tecrube >= mavi_yaka_tecrube and yonetici_tecrube >= beyaz_yaka_tecrube:
             return "Yönetici"
+# istenilen değerleri string halinde döndürecek str metodunu yazıyoruz
+    def __str__(self):
+        return f"Ad:{self.get_ad()},Soyad:{self.get_soyad()},Statü:{self.get_statu()}"
