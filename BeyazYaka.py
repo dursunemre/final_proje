@@ -18,3 +18,17 @@ class BeyazYaka(Calisan):
         while yeni_tesvik_primi < 100:
             yeni_tesvik_primi = int(input("Lütfen 100'den büyük bir teşvik primi değeri girin:"))
         self.__tesvik_primi = yeni_tesvik_primi
+# yeni maaş değerini hesaplamak için zam hakki metodunu yazıyoruz
+    def zam_hakki(self):
+        # tecrube ve maas değerlerini bizden istenilen şekilde karşılaştırıp teşvik primi değerini de kullanarak yeni maaş değeri buluyoruz
+        if self.get_tecrube() / 12 < 2:
+            zam_orani = self.get_tesvik_primi() * 10
+            self.set_yeni_maas(self.get_maas() + self.get_maas() * (zam_orani / 100))
+        elif self.get_tecrube() / 12 >= 2 and self.get_tecrube() < 4 and self.get_maas() < 15000:
+            zam_orani = (self.get_maas() % self.get_tecrube()) * 5 + self.get_tesvik_primi()
+            self.set_yeni_maas(self.get_maas() + zam_orani)
+        elif self.get_tecrube() / 12 >= 4 and self.get_maas() < 25000:
+            zam_orani = (self.get_maas() % self.get_tecrube()) * 4 + self.get_tesvik_primi()
+            self.set_yeni_maas(self.get_maas() + zam_orani)
+        else:
+            self.set_yeni_maas(self.get_maas())
