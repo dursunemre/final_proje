@@ -10,3 +10,11 @@ class BeyazYaka(Calisan):
         # istediğimiz aralıkta tesvik primi değeri girilmesi için while döngüsüyle kontrol edip hatalı değerde tekrar girilmesini sağlıyoruz
         while self.__tesvik_primi < 100:
             self.__tesvik_primi = int(input("Lütfen 100'den büyük bir teşvik primi değeri girin:"))
+# private değerlere ulaşıp değiştirebilmek için get-set metodlarını yazıyoruz
+    def get_tesvik_primi(self):
+        return self.__tesvik_primi
+
+    def set_tesvik_primi(self, yeni_tesvik_primi):
+        while yeni_tesvik_primi < 100:
+            yeni_tesvik_primi = int(input("Lütfen 100'den büyük bir teşvik primi değeri girin:"))
+        self.__tesvik_primi = yeni_tesvik_primi
