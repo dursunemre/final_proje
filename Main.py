@@ -68,3 +68,7 @@ for nesne in nesneler:
 #pandas modülünü kullanarak dictionary'den dataframe oluşturuyoruz ve ekrana yazdırıyoruz
 df = pd.DataFrame(sözlük).fillna(0)
 print(df)
+
+#shape metodu kullanarak maaşı 15000'den fazla olanları yazdırıyoruz
+maas__15000__uzeri = df[df["maas"] > 15000].shape[0]
+print("\nMaaşı 15000 TL üzerinde olanların toplam sayısı:", maas__15000__uzeri)
