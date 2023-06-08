@@ -72,3 +72,8 @@ print(df)
 #shape metodu kullanarak maaşı 15000'den fazla olanları yazdırıyoruz
 maas__15000__uzeri = df[df["maas"] > 15000].shape[0]
 print("\nMaaşı 15000 TL üzerinde olanların toplam sayısı:", maas__15000__uzeri)
+
+#dataframedeki değerleri çalışan tipine göre gruplandırıp her grubun ortalama maşş ve tecrübesini ekrana yazdırıyoruz
+gruplanmis_df = df.groupby("çalışan_tipi").agg({"yeni maas": "mean", "tecrube(ay)": "mean"})
+print("\nÇalışan Tiplerine Göre Ortalama Maaş ve Tecrübe:")
+print(gruplanmis_df)
