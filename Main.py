@@ -36,33 +36,3 @@ ornek_13 = BeyazYaka(tc_no=47906,ad="kazım",soyad="çapa",yas=59,cinsiyet="erke
 ornek_14 = BeyazYaka(tc_no=54896,ad="soner",soyad="kabadayı",yas=64,cinsiyet="erkek",uyruk="türk",sektor="muhasebe",tecrube=178,maas=22000,yeni_maas=0,tesvik_primi=250)
 
 print(ornek_12.__str__(),"\n",ornek_13.__str__(),"\n",ornek_14.__str__(),"\n")
-
-#dataframe'de kullanacağımız nesneleri listeye atıyoruz
-nesneler = [ornek_6,ornek_7,ornek_8,ornek_9,ornek_10,ornek_11,ornek_12,ornek_13,ornek_14,]
-#dataframe oluşturmak için kullanacağımız dictionary'i oluşturuyoruz
-sözlük = {"tc_no": [], "ad": [], "soyad": [], "yas": [], "cinsiyet": [], "uyruk": [], "sektor": [], "tecrube(ay)": [], "maas": [],"yeni maas": [] ,"yıpranma_payi": [], "tesvik_primi": [],"çalışan_tipi": []}
-#nesneler listesindeki her bir nesne için dönecek for döngüsünü açıyoruz
-for nesne in nesneler:
-    #nesnenin yeni maaş değerinin hesaplanması için zam hakki metodu çağırıyoruz
-    nesne.zam_hakki()
-    #her bir nesnenin gerekli değerleini sözlüğe kaydediyoruz
-    sözlük["tc_no"].append(nesne.get_tc_no())
-    sözlük["ad"].append(nesne.get_ad())
-    sözlük["soyad"].append(nesne.get_soyad())
-    sözlük["yas"].append(nesne.get_yas())
-    sözlük["cinsiyet"].append(nesne.get_cinsiyet())
-    sözlük["uyruk"].append(nesne.get_uyruk())
-    sözlük["sektor"].append(nesne.get_sektor())
-    sözlük["tecrube(ay)"].append(nesne.get_tecrube())
-    sözlük["maas"].append(nesne.get_maas())
-    sözlük["yeni maas"].append(nesne.get_yeni_maas())
-    sözlük["çalışan_tipi"].append(type(nesne).__name__)
-    #istenilen değerin nesnede bulnmaması haline try-except kullanarak sözlükte o değerlerin None değerini almasını sağlıyoruz
-    try:
-        sözlük["yıpranma_payi"].append(nesne.get_yipranma_payi())
-    except AttributeError:
-        sözlük["yıpranma_payi"].append(None)
-    try:
-        sözlük["tesvik_primi"].append(nesne.get_tesvik_primi())
-    except AttributeError:
-        sözlük["tesvik_primi"].append(None)
