@@ -10,3 +10,11 @@ class MaviYaka(Calisan):
         #istediğimiz aralıkta yıpranma payı değeri girilmesi için while döngüsüyle kontrol edip hatalı değerde tekrar girilmesini sağlıyoruz
         while self.__yipranma_payi <= 0 or self.__yipranma_payi >= 1:
             self.__yipranma_payi = float(input("Lütfen 0 ile 1 arasında bir yıpranma payı değeri girin: "))
+# private değerlere ulaşıp değiştirebilmek için get-set metodlarını yazıyoruz
+    def get_yipranma_payi(self):
+        return self.__yipranma_payi
+
+    def set_yipranma_payi(self, yeni_yipranma_payi):
+        if yeni_yipranma_payi <= 0 or yeni_yipranma_payi >= 1:
+            yeni_yipranma_payi = float(input("Lütfen 0 ile 1 arasında bir yıpranma payı değeri girin: "))
+        self.__yipranma_payi = yeni_yipranma_payi
