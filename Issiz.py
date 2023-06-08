@@ -16,3 +16,25 @@ class Issiz(Insan):
         #statü değerini statü bul metodu kullanarak bulduruyoruz
         if statu is None:
             self.__statu = self.statu_bul()
+
+    # private değerlere ulaşıp değiştirebilmek için get-set metodlarını yazıyoruz
+    def get_mavi_yaka_tecrube(self):
+        return self.__tecrube["mavi yaka"]
+
+       def set_mavi_yaka_tecrube(self, yeni_mavi_yaka_tecrube):
+        self.__mavi_yaka = yeni_mavi_yaka_tecrube
+
+    def get_beyaz_yaka_tecrube(self):
+        return self.__tecrube["beyaz yaka"]
+
+    def set_beyaz_yaka_tecrube(self, yeni_beyaz_yaka_tecrube):
+        self.__beyaz_yaka = yeni_beyaz_yaka_tecrube
+
+    def get_yonetici_tecrube(self):
+        return self.__tecrube["yonetici"]
+
+    def set_yonetici_tecrube(self, yeni_yonetici_tecrube):
+        self.__mavi_yaka = yeni_yonetici_tecrube
+
+    def get_statu(self):
+        return self.__statu
