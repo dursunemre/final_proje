@@ -77,3 +77,8 @@ print("\nMaaşı 15000 TL üzerinde olanların toplam sayısı:", maas__15000__u
 gruplanmis_df = df.groupby("çalışan_tipi").agg({"yeni maas": "mean", "tecrube(ay)": "mean"})
 print("\nÇalışan Tiplerine Göre Ortalama Maaş ve Tecrübe:")
 print(gruplanmis_df)
+
+#yeni maaş değerine df sıralıyoruz
+sıralı_df = df.sort_values("yeni maas")
+print("\nyeni maaş değerine göre sıralanmış dataframe:")
+print(sıralı_df)
