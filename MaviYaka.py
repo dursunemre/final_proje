@@ -35,3 +35,8 @@ class MaviYaka(Calisan):
 
         else:
             self.set_yeni_maas(self.get_maas())
+
+# istenilen değerleri string halinde döndürecek str metodunu yazıyoruz
+    def __str__(self):
+        self.zam_hakki()
+        return f"AD: {self.get_ad()}, SOYAD: {self.get_soyad()}, TECRUBE(AY): {self.get_tecrube()} AY, YENI MAAS: {self.get_yeni_maas()}"
