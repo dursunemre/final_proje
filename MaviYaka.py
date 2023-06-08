@@ -18,3 +18,20 @@ class MaviYaka(Calisan):
         if yeni_yipranma_payi <= 0 or yeni_yipranma_payi >= 1:
             yeni_yipranma_payi = float(input("Lütfen 0 ile 1 arasında bir yıpranma payı değeri girin: "))
         self.__yipranma_payi = yeni_yipranma_payi
+# yeni maaş değerini hesaplamak için zam hakki metodunu yazıyoruz
+    def zam_hakki(self):
+        # tecrube ve maas değerlerini bizden istenilen şekilde karşılaştırıp yıpranma payı değerini de kullanarak yeni maaş değeri buluyoruz
+        if self.get_tecrube() / 12 < 2:
+            zam_orani = self.__yipranma_payi * 10
+            self.set_yeni_maas(self.get_maas() + self.get_maas() * (zam_orani / 100))
+
+        elif self.get_tecrube() / 12 >= 2 and self.get_tecrube() < 4 and self.get_maas() < 15000:
+            zam_orani = (self.get_maas() % self.get_tecrube()) / 2 + (self.__yipranma_payi * 10)
+            self.set_yeni_maas(self.get_maas() + self.get_maas() * (zam_orani / 100))
+
+        elif self.get_tecrube() / 12 >= 4 and self.get_maas() < 25000:
+            zam_orani = (self.get_maas() % self.get_tecrube()) / 3 + (self.__yipranma_payi * 10)
+            self.set_yeni_maas(self.get_maas() + self.get_maas() * (zam_orani / 100))
+
+        else:
+            self.set_yeni_maas(self.get_maas())
