@@ -82,3 +82,8 @@ print(gruplanmis_df)
 sıralı_df = df.sort_values("yeni maas")
 print("\nyeni maaş değerine göre sıralanmış dataframe:")
 print(sıralı_df)
+
+#ay halindeki tecrube değerini yıl ahline getirip 3 seneden fazla olan beyaz yakalıları yazdırıyoruz
+print("\nTecrübesi 3 seneden fazla olan Beyaz yakalılar:")
+filtre = (df["çalışan_tipi"] == "BeyazYaka") & ((df["tecrube(ay)"]/12) >= 3)
+print(df.loc[filtre])
