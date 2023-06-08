@@ -69,3 +69,7 @@ class Calisan(Insan):
 
     def set_yeni_maas(self, yeni_yeni_maas):
         self.__yeni_maas = yeni_yeni_maas
+# istenilen değerleri string halinde döndürecek str metodunu yazıyoruz
+    def __str__(self):
+        self.zam_hakki()
+        return f"AD: {self.get_ad()}, SOYAD: {self.get_soyad()}, TECRUBE: {self.get_tecrube()} AY, YENI MAAS: {self.get_yeni_maas()}"
