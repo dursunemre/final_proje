@@ -15,3 +15,30 @@ class Calisan(Insan):
         self.__maas = maas
         if yeni_maas is None:
             self.__yeni_maas = yeni_maas
+# private değerlere ulaşıp değiştirebilmek için get-set metodlarını yazıyoruz
+    def get_sektor(self):
+        return self.__sektor
+
+    def set_sektor(self, sektor_deger):
+        sektor_liste = ["teknoloji", "muhasebe", "insaat", "diger"]
+        while sektor_deger not in sektor_liste:
+            sektor_deger = input("lütfen sektör değerini inşaat, muhasebe, teknoloji veya diğer olarak girin:")
+        self.__sektor = sektor_deger
+
+    def get_tecrube(self):
+        return self.__tecrube
+
+    def set_tecrube(self, yeni_tecrube):
+        self.__tecrube = yeni_tecrube
+
+    def get_maas(self):
+        return self.__maas
+
+    def set_maas(self, yeni_maas):
+        self.__maas = yeni_maas
+
+    def get_yeni_maas(self):
+        return self.__yeni_maas
+
+    def set_yeni_maas(self, yeni_yeni_maas):
+        self.__yeni_maas = yeni_yeni_maas
