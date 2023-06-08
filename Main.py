@@ -87,3 +87,7 @@ print(sıralı_df)
 print("\nTecrübesi 3 seneden fazla olan Beyaz yakalılar:")
 filtre = (df["çalışan_tipi"] == "BeyazYaka") & ((df["tecrube(ay)"]/12) >= 3)
 print(df.loc[filtre])
+
+print("\nYeni maaşı 10000 TL üzerinde olanlar için; 2-5 satır arası olanları, tc_no ve yeni_maaş sütunları:")
+filtre = (df['yeni maas'] > 10000) & (df.index > 2) & (df.index < 5)
+print(df.loc[filtre, ['tc_no', 'yeni maas']])
