@@ -45,3 +45,7 @@ class Insan:
 
         def set_uyruk(self, yeni_uyruk):
             self.__uyruk = yeni_uyruk
+
+            # istenilen değerleri string halinde döndürecek str metodunu yazıyoruz
+            def __str__(self):
+                return f" TC:{self.__tc_no}, AD:{self.__ad}, SOYAD:{self.__soyad}, YAS:{self.__yas}, CİNSİYET:{self.__cinsiyet}, UYRUK:{self.__uyruk}"
